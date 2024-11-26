@@ -1,4 +1,4 @@
-#READ.me file for second year project
+#README.md file for [second year project] SYP
 
 #MERN Framework 
 
