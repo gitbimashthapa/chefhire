@@ -1,4 +1,3 @@
-HEAD
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
@@ -35,27 +34,3 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-
-#README.md file for [second year project] SYP
-
-#MERN Framework
-
-[Requirement and analysis] React.js,Next.js,Tailwind.css,stripe =success.wk0
-
-[Planning and design] ERD and use case diagram = success.lb1.wk2
-
-#Task1 Package Push = Success.lb2.wk4
-
-#Task2 Login Page
-
-#Task3 Responsive Design
-
-#Task4 Javascript
-
-#Task5 React JS Framework
-
-#Task6 Backend Technology
-
-#Task7 Deployment
-
-932ad65a0f2d77874168efb2accf4bbfefff4fef
