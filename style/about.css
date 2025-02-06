@@ -1,0 +1,129 @@
+.glass-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(100px);
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 40px; /* Increased margin-bottom */
+}
+.hover-effect {
+    transition: transform 0.5s, box-shadow 0.5s;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.hover-effect:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+.title {
+    color: #4a90e2;
+    position: relative;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+.title::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    background-color: #4a90e2;
+    bottom: -5px;
+    left: 0;
+}
+.job-title {
+    font-weight: bold;
+    color: #4a90e2;
+}
+.company, .institution {
+    font-style: italic;
+    color: #999;
+}
+.right-align {
+    text-align: right;
+}
+h3 {
+    color: #ffffff;
+}
+@media (max-width: 768px) {
+    .flex-row {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .right-align {
+        text-align: left;
+    }
+}
+
+.custom-skill-card {
+    padding: 0.5rem; /* Adjust padding as needed */
+    width: 100px; /* Set a fixed width for the skill cards */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.custom-skill-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.custom-skill-card img {
+    width: 2rem; /* Adjust width as needed */
+    height: 2rem; /* Adjust height as needed */
+}
+
+.custom-skill-card span {
+    margin-top: 0.25rem; /* Adjust margin as needed */
+}
+
+/* Recommendation Section */
+/* .recommendations-section {
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 10px;
+} */
+
+.recommendation-card {
+    padding: 1rem;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.recommendation-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.recommendation-card .recommended {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Align items to the right */
+}
+
+.recommendation-card .recommended img {
+    margin-left: 0.5rem;
+}
+
+/* Carousel buttons */
+#prevBtn, #nextBtn {
+    z-index: 10;
+    cursor: pointer;
+    opacity: 0.75;
+    transition: opacity 0.3s;
+}
+
+#prevBtn:hover, #nextBtn:hover {
+    opacity: 1;
+}
+
+#recommendations-container::-webkit-scrollbar {
+    display: none;  /* Safari and Chrome */
+}

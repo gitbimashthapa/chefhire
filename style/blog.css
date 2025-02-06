@@ -1,0 +1,101 @@
+.tag-btn {
+    background-color: #4A5568;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    transition: background-color 0.3s;
+}
+
+.tag-btn:hover {
+    background-color: #2D3748;
+}
+
+.p-4 {
+    padding: 1rem;
+}
+
+.bg-gray-800 {
+    background-color: #2D3748;
+}
+
+.rounded-lg {
+    border-radius: 0.5rem;
+}
+
+.shadow-md {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.hover\:shadow-lg:hover {
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+}
+
+.transition {
+    transition: all 0.3s ease;
+}
+
+.duration-300 {
+    transition-duration: 300ms;
+}
+
+.transform {
+    transform: scale(1);
+}
+
+.hover\:scale-105:hover {
+    transform: scale(1.02);
+}
+
+.relative {
+    position: relative;
+}
+
+.w-full {
+    width: 100%;
+}
+
+.md\:w-2\/3 {
+    width: 66.67%;
+}
+
+.mx-auto {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hidden {
+    display: none;
+}
+
+.mb-4 {
+    margin-bottom: 1rem;
+}
+
+.mb-6 {
+    margin-bottom: 1.5rem;
+}
+
+.space-x-2 {
+    > * + * {
+        margin-left: 0.5rem;
+    }
+}
+
+.tag-indicator {
+    background-color: #4A5568;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.close-tag-btn {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+}

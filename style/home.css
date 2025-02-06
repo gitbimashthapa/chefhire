@@ -1,0 +1,95 @@
+/* Custom styles for the About Me page */
+
+.hero-image {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    margin: 0 auto; /* Center the image */
+}
+
+.typing {
+    border-right: .15em solid orange;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 0;
+    animation: typing 4s steps(40, end), blink-caret .75s step-end infinite;
+}
+
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: orange; }
+}
+
+/* Hand waving animation */
+@keyframes wave {
+    0% { transform: rotate(0deg); }
+    10% { transform: rotate(14deg); }
+    20% { transform: rotate(-8deg); }
+    30% { transform: rotate(14deg); }
+    40% { transform: rotate(-4deg); }
+    50% { transform: rotate(10deg); }
+    60% { transform: rotate(0deg); } /* Reset for the next animation cycle */
+}
+
+.animate-waving-hand {
+    display: inline-block;
+    animation: wave 2s infinite;
+    transform-origin: 70% 70%;
+}
+
+/* Custom styles for the cards */
+.bg-gray-100 {
+    background-color: #f7fafc;
+}
+.dark .bg-gray-100 {
+    background-color: #2d3748;
+}
+.p-6 {
+    padding: 1.5rem;
+}
+.rounded-lg {
+    border-radius: 0.5rem;
+}
+.shadow-md {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.space-x-4 > :not(:last-child) {
+    margin-right: 1rem;
+}
+.grid {
+    display: grid;
+    gap: 1.5rem;
+}
+@media (min-width: 640px) {
+    .sm\:grid-cols-3 {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+@media (min-width: 768px) {
+    .md\:grid-cols-4 {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+}
+@media (min-width: 1024px) {
+    .lg\:grid-cols-6 {
+        grid-template-columns: repeat(6, minmax(0, 1fr));
+    }
+}
+
+/* Ensure images retain their aspect ratio */
+.object-contain {
+    object-fit: contain;
+}
+
+.font-roboto {
+    font-family: 'Roboto', sans-serif;
+}
+
+
+
+
