@@ -1,16 +1,16 @@
 [
     {
         "date": "Jan 6, 2025",
-        "title": "Understanding API Keys: Your Gateway to the Digital World",
-        "description": "In this article, we will delve into the purpose and importance of API keys, exploring how they secure and facilitate communication between applications. This guide will walk you through their functionality, best practices for management, and how to avoid common pitfalls.",
-        "link": "https://medium.com/@mailbimashthapa/understanding-api-keys-your-gateway-to-the-digital-world-75ece00e8dd8",
-        "tags": ["API", "Api Key", "Authentication", "Web Development"]
+        "title": "Experience Private Dining Like Never Before with ChefHire",
+        "description": "In this article, we will delve into the joy of exploring the private dinner and cuiisne prepared by experienced chef at comfort of home.",
+        "link": "https://medium.com/@mailbimashthapa/experience-private-dining-like-never-before-with-chefhire-046bdf66bf46",
+        "tags": ["chef hire", "private chef", "chef's deal"]
     },
     {
         "date": "Jan 7, 2025",
-        "title": "The Essential Guide to CI/CD Pipelines: Accelerating Your Software Development",
-        "description": "A comprehensive guide to understanding and implementing CI/CD pipelines to streamline software development and accelerate delivery.",
-        "link": "https://medium.com/@mailbimashthapa/the-essential-guide-to-ci-cd-pipelines-accelerating-your-software-development-7e62ac46a9f3",
-        "tags": ["DevOps", "Ci Cd Pipelines", "Automation"]
+        "title": "Bringing Fine Dining Home with ChefHire",
+        "description": "Skip the reservations and the crowded restaurants — bring the fine dining experience home with ChefHire. Whether it’s a celebration, a date night, or a casual gathering, let ChefHire elevate your meals with professional culinary excellence.",
+        "link": "https://medium.com/@mailbimashthapa/bringing-fine-dining-home-with-chefhire-af1cc8cedfac",
+        "tags": ["private dining", "Healthy lifestyle", "Celebration"]
     }
 ]
