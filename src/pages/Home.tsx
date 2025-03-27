@@ -22,7 +22,7 @@ const Home = () => {
         <div className="container mx-auto px-4">
           <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
             <h1 className="text-5xl md:text-6xl font-bold mb-6 animate-fadeIn">
-              Hire Professional Chefs for Your Private Events
+              Hire Professional Chefs for Private Events
             </h1>
             <p className="text-xl text-muted-foreground mb-10 max-w-3xl animate-fadeIn fade-in-delay-1">
               Experience exceptional cuisine in the comfort of your home with
@@ -53,7 +53,7 @@ const Home = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <Card className="bg-blue border-none shadow-md text-center p-6 animate-slideUp">
+            <Card className="bg-green-200 border-none shadow-md text-center p-6 animate-slideUp">
               <CardContent className="pt-6">
                 <h3 className="text-xl font-bold mb-3">Select a Chef</h3>
                 <p className="text-muted-foreground">
@@ -64,7 +64,7 @@ const Home = () => {
             </Card>
 
             <Card
-              className="bg-blue border-none shadow-md text-center p-6 animate-slideUp"
+              className="bg-green-200 border-none shadow-md text-center p-6 animate-slideUp"
               style={{ animationDelay: "0.1s" }}
             >
               <CardContent className="pt-6">
@@ -77,7 +77,7 @@ const Home = () => {
             </Card>
 
             <Card
-              className="bg-blue border-none shadow-md text-center p-6 animate-slideUp"
+              className="bg-green-200 border-none shadow-md text-center p-6 animate-slideUp"
               style={{ animationDelay: "0.2s" }}
             >
               <CardContent className="pt-6">
@@ -107,7 +107,7 @@ const Home = () => {
             {featuredChefs.map((chef, index) => (
               <Card
                 key={chef.id}
-                className="overflow-hidden transition-all duration-300 hover:shadow-lg animate-slideUp"
+                className="bg-green-200 overflow-hidden transition-all duration-300 hover:shadow-lg animate-slideUp"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <div className="aspect-video overflow-hidden">
@@ -124,7 +124,7 @@ const Home = () => {
                       <p className="text-chef-accent">{chef.speciality}</p>
                     </div>
                     <div className="bg-chef-accent/10 text-chef-accent px-3 py-1 rounded-full text-sm font-medium">
-                      ${chef.hourlyRate}/hr
+                      Rs.{chef.hourlyRate}/hr
                     </div>
                   </div>
 

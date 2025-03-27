@@ -16,7 +16,7 @@ const About = () => {
             </p>
           </div>
 
-          <div className="bg-chef-light rounded-2xl p-8 md:p-12 shadow-sm">
+          <div className="bg-green-300 rounded-2xl p-8 md:p-12 shadow-sm">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
               <div className="space-y-6 animate-slideInLeft">
                 <h2 className="text-3xl font-bold">Our Mission</h2>

@@ -5,23 +5,23 @@ import { Chef } from '@/types';
 const chefs: Chef[] = [
   {
     id: '1',
-    name: 'Jordon Ram',
+    name: 'Bikash Karki',
     image: 'https://randomuser.me/api/portraits/men/1.jpg',
     speciality: 'French Cuisine',
     skills: ['Baking', 'Grilling', 'Sauces'],
     description: 'Award-winning chef specializing in French cuisine with over 20 years of experience.',
     available: true,
-    hourlyRate: 65,
+    hourlyRate: 3500,
   },
   {
     id: '2',
-    name: 'Nivika Rai',
+    name: 'Aashika Rai',
     image: 'https://i.pravatar.cc/300?img=35',
     speciality: 'Italian Cuisine',
     skills: ['Pasta', 'Mediterranean', 'Vegetarian'],
     description: 'Celebrity chef known for simple, delicious Italian recipes and healthy cooking.',
     available: true,
-    hourlyRate: 75,
+    hourlyRate: 2500,
   },
   {
     id: '3',
@@ -31,7 +31,7 @@ const chefs: Chef[] = [
     skills: ['Desserts', 'Comfort Food', 'Entertaining'],
     description: 'Renowned for approachable home cooking with a touch of elegance and indulgence.',
     available: false,
-    hourlyRate: 80,
+    hourlyRate: 2000,
   },
 ];
 
