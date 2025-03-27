@@ -40,11 +40,12 @@
 
 @layer base {
   * {
-    @apply border-border;
+    border-color: hsl(var(--border));
   }
 
   body {
-    @apply bg-blue-400 text-foreground font-sans;
+    background-color: #60a5fa; /* bg-blue-400 equivalent */
+    color: hsl(var(--foreground));
     font-family: "Inter", sans-serif;
   }
 }
