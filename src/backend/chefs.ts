@@ -6,7 +6,7 @@ const chefs: Chef[] = [
   {
     id: '1',
     name: 'Bikash Karki',
-    image: 'https://randomuser.me/api/portraits/men/1.jpg',
+    image: 'https://i.pravatar.cc/300?img=12',
     speciality: 'French Cuisine',
     skills: ['Baking', 'Grilling', 'Sauces'],
     description: 'Award-winning chef specializing in French cuisine with over 20 years of experience.',
@@ -16,7 +16,7 @@ const chefs: Chef[] = [
   {
     id: '2',
     name: 'Aashika Rai',
-    image: 'https://i.pravatar.cc/300?img=35',
+    image: 'https://i.pravatar.cc/300?img=9',
     speciality: 'Italian Cuisine',
     skills: ['Pasta', 'Mediterranean', 'Vegetarian'],
     description: 'Celebrity chef known for simple, delicious Italian recipes and healthy cooking.',
@@ -26,7 +26,7 @@ const chefs: Chef[] = [
   {
     id: '3',
     name: 'Aditya Jha',
-    image: 'https://i.pravatar.cc/300?img=55',
+    image: 'https://i.pravatar.cc/300?img=68',
     speciality: 'Home Cooking',
     skills: ['Desserts', 'Comfort Food', 'Entertaining'],
     description: 'Renowned for approachable home cooking with a touch of elegance and indulgence.',
