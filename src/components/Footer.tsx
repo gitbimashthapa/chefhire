@@ -8,7 +8,6 @@ export const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
-              <ChefHat className="h-6 w-6" />
               <h3 className="text-xl font-bold">ChefHire</h3>
             </div>
             <p className="text-Black max-w-xs">
@@ -50,12 +49,12 @@ export const Footer = () => {
               </div>
               <div className="flex items-center space-x-3">
                 <Phone className="h-5 w-5 text-chef-accent" />
-                <span className="text-black">+1 (555) 123-4567</span>
+                <span className="text-black">+977 9820307878</span>
               </div>
               <div className="flex items-center space-x-3">
                 <MapPin className="h-5 w-5 text-chef-accent" />
                 <span className="text-black">
-                  123 Culinary Ave, Kitchen City
+                  12 road itahari, Kitchen Town
                 </span>
               </div>
             </div>

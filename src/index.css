@@ -44,7 +44,7 @@
   }
 
   body {
-    @apply bg-background text-foreground font-sans;
+    @apply bg-blue-400 text-foreground font-sans;
     font-family: "Inter", sans-serif;
   }
 }

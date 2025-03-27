@@ -19,9 +19,6 @@ const About = () => {
           <div className="bg-chef-light rounded-2xl p-8 md:p-12 shadow-sm">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
               <div className="space-y-6 animate-slideInLeft">
-                <div className="inline-block rounded-full bg-primary/10 p-3">
-                  <ChefHat className="h-8 w-8 text-primary" />
-                </div>
                 <h2 className="text-3xl font-bold">Our Mission</h2>
                 <p className="text-muted-foreground">
                   At ChefHire, we're on a mission to transform the way people
@@ -45,61 +42,8 @@ const About = () => {
                     className="w-full h-full object-cover"
                   />
                 </div>
-                <div className="absolute -bottom-6 -right-6 bg-blue rounded-lg shadow-lg p-4 max-w-xs hidden md:block">
-                  <p className="italic text-muted-foreground">
-                    "Our platform is built on the belief that every meal can be
-                    an extraordinary experience."
-                  </p>
-                </div>
+                <div className="absolute -bottom-6 -right-6 bg-blue rounded-lg shadow-lg p-4 max-w-xs hidden md:block"></div>
               </div>
-            </div>
-          </div>
-        </section>
-
-        <section className="mb-20">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-blue rounded-xl p-8 shadow-sm transition-transform hover:translate-y-[-5px] animate-slideUp">
-              <div className="inline-block rounded-full bg-primary/10 p-3 mb-4">
-                <Award className="h-6 w-6 text-primary" />
-              </div>
-              <h3 className="text-xl font-bold mb-3">Quality First</h3>
-              <p className="text-muted-foreground">
-                We carefully select each chef based on their experience,
-                expertise, and commitment to excellence. Our chefs have worked
-                in top restaurants and bring their expertise to your kitchen.
-              </p>
-            </div>
-
-            <div
-              className="bg-blue rounded-xl p-8 shadow-sm transition-transform hover:translate-y-[-5px] animate-slideUp"
-              style={{ animationDelay: "0.1s" }}
-            >
-              <div className="inline-block rounded-full bg-primary/10 p-3 mb-4">
-                <Heart className="h-6 w-6 text-primary" />
-              </div>
-              <h3 className="text-xl font-bold mb-3">
-                Personalized Experience
-              </h3>
-              <p className="text-muted-foreground">
-                Every dining experience is tailored to your preferences. Our
-                chefs work with you to create customized menus that cater to
-                your tastes, dietary requirements, and special requests.
-              </p>
-            </div>
-
-            <div
-              className="bg-blue rounded-xl p-8 shadow-sm transition-transform hover:translate-y-[-5px] animate-slideUp"
-              style={{ animationDelay: "0.2s" }}
-            >
-              <div className="inline-block rounded-full bg-primary/10 p-3 mb-4">
-                <Globe className="h-6 w-6 text-primary" />
-              </div>
-              <h3 className="text-xl font-bold mb-3">Global Cuisine</h3>
-              <p className="text-muted-foreground">
-                Our diverse roster of chefs offers expertise in cuisines from
-                around the world. From traditional French and Italian to modern
-                fusion and plant-based cooking, we have chefs for every palate.
-              </p>
             </div>
           </div>
         </section>
@@ -126,14 +70,6 @@ const About = () => {
               </div>
 
               <div className="space-y-6">
-                <p className="text-muted-foreground">
-                  ChefHire was founded in 2023 by a group of food enthusiasts
-                  who recognized a gap in the market for high-quality,
-                  personalized dining experiences at home. What started as a
-                  small network of chefs has grown into a comprehensive platform
-                  connecting talented culinary professionals with clients
-                  seeking exceptional food experiences.
-                </p>
                 <p className="text-muted-foreground">
                   Our team's passion for food and hospitality drives everything
                   we do. We believe that food brings people together, creates
