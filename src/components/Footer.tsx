@@ -1,4 +1,4 @@
-import { ChefHat, Mail, Phone, MapPin } from "lucide-react";
+import { Mail, Phone, MapPin } from "lucide-react";
 import { Link } from "react-router-dom";
 
 export const Footer = () => {

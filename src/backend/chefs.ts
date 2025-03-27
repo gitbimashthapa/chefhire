@@ -11,17 +11,17 @@ const chefs: Chef[] = [
     skills: ['Baking', 'Grilling', 'Sauces'],
     description: 'Award-winning chef specializing in French cuisine with over 20 years of experience.',
     available: true,
-    hourlyRate: 150,
+    hourlyRate: 65,
   },
   {
     id: '2',
-    name: 'Sarvika Katuwal',
+    name: 'Nivika Rai',
     image: 'https://i.pravatar.cc/300?img=35',
     speciality: 'Italian Cuisine',
     skills: ['Pasta', 'Mediterranean', 'Vegetarian'],
     description: 'Celebrity chef known for simple, delicious Italian recipes and healthy cooking.',
     available: true,
-    hourlyRate: 120,
+    hourlyRate: 75,
   },
   {
     id: '3',
@@ -31,7 +31,7 @@ const chefs: Chef[] = [
     skills: ['Desserts', 'Comfort Food', 'Entertaining'],
     description: 'Renowned for approachable home cooking with a touch of elegance and indulgence.',
     available: false,
-    hourlyRate: 100,
+    hourlyRate: 80,
   },
 ];
 

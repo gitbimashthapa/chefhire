@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, ChefHat, User } from "lucide-react";
+import { Menu, X, User } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useAuth } from "@/contexts/AuthContext";
 import { cn } from "@/lib/utils";
@@ -52,7 +52,6 @@ export const Navbar = () => {
     >
       <div className="container flex justify-between items-center mx-auto">
         <Link to="/" className="flex items-center space-x-2">
-          <ChefHat className="h-8 w-8 text-chef-accent" />
           <span className="text-2xl font-bold text-foreground">ChefHire</span>
         </Link>
 

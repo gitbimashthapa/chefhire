@@ -145,28 +145,22 @@ const ChefDetail = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
                   <Card>
                     <CardContent className="flex items-center p-4">
-                      <div className="bg-primary/10 p-2 rounded-full mr-4">
-                        <DollarSign className="h-5 w-5 text-primary" />
-                      </div>
                       <div>
                         <p className="text-sm text-muted-foreground">
                           Hourly Rate
                         </p>
-                        <p className="text-lg font-bold">RS{chef.hourlyRate}</p>
+                        <p className="text-lg font-bold">Rs{chef.hourlyRate}</p>
                       </div>
                     </CardContent>
                   </Card>
 
                   <Card>
                     <CardContent className="flex items-center p-4">
-                      <div className="bg-primary/10 p-2 rounded-full mr-4">
-                        <Award className="h-5 w-5 text-primary" />
-                      </div>
                       <div>
                         <p className="text-sm text-muted-foreground">
                           Experience
                         </p>
-                        <p className="text-lg font-bold">10+ Years</p>
+                        <p className="text-lg font-bold">7+ Years</p>
                       </div>
                     </CardContent>
                   </Card>
@@ -175,11 +169,6 @@ const ChefDetail = () => {
                 <Separator className="my-6" />
 
                 <div>
-                  <h2 className="text-2xl font-bold mb-4">About</h2>
-                  <p className="text-muted-foreground mb-6">
-                    {chef.description}
-                  </p>
-
                   <h3 className="text-xl font-bold mb-3">Expertise</h3>
                   <ul className="list-disc pl-5 mb-6 space-y-1 text-muted-foreground">
                     <li>
@@ -279,7 +268,7 @@ const ChefDetail = () => {
                     <Separator className="my-2" />
                     <div className="flex justify-between font-bold">
                       <span>Total:</span>
-                      <span>RS{calculatePrice()}</span>
+                      <span>Rs{calculatePrice()}</span>
                     </div>
                   </div>
                 </div>

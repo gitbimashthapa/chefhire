@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import { ChefHat, Calendar, DollarSign, Clock, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Layout } from "@/components/Layout";
@@ -31,7 +30,6 @@ const Home = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 animate-fadeIn fade-in-delay-2">
               <Button size="lg" className="px-8" onClick={scrollToChefs}>
-                <ChefHat className="mr-2 h-5 w-5" />
                 Find a Chef
               </Button>
               <Link to="/about">
@@ -57,9 +55,6 @@ const Home = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <Card className="bg-blue border-none shadow-md text-center p-6 animate-slideUp">
               <CardContent className="pt-6">
-                <div className="rounded-full bg-primary/10 p-4 w-16 h-16 flex items-center justify-center mx-auto mb-6">
-                  <ChefHat className="h-8 w-8 text-primary" />
-                </div>
                 <h3 className="text-xl font-bold mb-3">Select a Chef</h3>
                 <p className="text-muted-foreground">
                   Browse through our selection of professional chefs and find
@@ -73,9 +68,6 @@ const Home = () => {
               style={{ animationDelay: "0.1s" }}
             >
               <CardContent className="pt-6">
-                <div className="rounded-full bg-primary/10 p-4 w-16 h-16 flex items-center justify-center mx-auto mb-6">
-                  <Calendar className="h-8 w-8 text-primary" />
-                </div>
                 <h3 className="text-xl font-bold mb-3">Book a Date</h3>
                 <p className="text-muted-foreground">
                   Choose a convenient date and time for your chef to come and
@@ -89,9 +81,6 @@ const Home = () => {
               style={{ animationDelay: "0.2s" }}
             >
               <CardContent className="pt-6">
-                <div className="rounded-full bg-primary/10 p-4 w-16 h-16 flex items-center justify-center mx-auto mb-6">
-                  <DollarSign className="h-8 w-8 text-primary" />
-                </div>
                 <h3 className="text-xl font-bold mb-3">Make Payment</h3>
                 <p className="text-muted-foreground">
                   Secure your booking with a simple payment process and get
