@@ -1,20 +1,50 @@
-
-import { useState, useEffect } from 'react';
-import { Navigate, Link } from 'react-router-dom';
-import { ChefHat, Calendar, User, Settings, Users, Plus, PenTool, Trash } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
-import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
-import { Textarea } from '@/components/ui/textarea';
-import { format } from 'date-fns';
-import { useAuth } from '@/contexts/AuthContext';
-import { Layout } from '@/components/Layout';
-import { getUserBookings, getChefs, getChefById, createChef, updateChef, deleteChef } from '@/lib/mockData';
-import { Chef } from '@/types';
-import { toast } from 'sonner';
+import { useState, useEffect } from "react";
+import { Navigate, Link } from "react-router-dom";
+import {
+  ChefHat,
+  Calendar,
+  User,
+  Settings,
+  Users,
+  Plus,
+  PenTool,
+  Trash,
+} from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
+import { format } from "date-fns";
+import { useAuth } from "@/contexts/AuthContext";
+import { Layout } from "@/components/Layout";
+import {
+  getUserBookings,
+  getChefs,
+  getChefById,
+  createChef,
+  updateChef,
+  deleteChef,
+} from "@/lib/mockData";
+import { Chef } from "@/types";
+import { toast } from "sonner";
 
 const Dashboard = () => {
   const { user } = useAuth();
@@ -24,11 +54,11 @@ const Dashboard = () => {
   const [isDeleteDialogOpen, setIsDeleteDialogOpen] = useState(false);
   const [selectedChef, setSelectedChef] = useState<Chef | null>(null);
   const [formData, setFormData] = useState({
-    name: '',
-    image: '',
-    speciality: '',
-    skills: '',
-    description: '',
+    name: "",
+    image: "",
+    speciality: "",
+    skills: "",
+    description: "",
     available: true,
     hourlyRate: 100,
   });
@@ -38,17 +68,17 @@ const Dashboard = () => {
       // Fetch bookings
       const userBookings = getUserBookings(user.id);
       // Add chef details to bookings
-      const bookingsWithChefDetails = userBookings.map(booking => {
+      const bookingsWithChefDetails = userBookings.map((booking) => {
         const chef = getChefById(booking.chefId);
         return {
           ...booking,
-          chef
+          chef,
         };
       });
       setBookings(bookingsWithChefDetails);
-      
+
       // Fetch chefs for admin
-      if (user.role === 'admin') {
+      if (user.role === "admin") {
         setChefs(getChefs());
       }
     }
@@ -58,38 +88,40 @@ const Dashboard = () => {
     return <Navigate to="/login" />;
   }
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     const { name, value } = e.target;
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
-      [name]: value
+      [name]: value,
     }));
   };
 
   const handleCheckboxChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, checked } = e.target;
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
-      [name]: checked
+      [name]: checked,
     }));
   };
 
   const handleNumberChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
-      [name]: parseFloat(value)
+      [name]: parseFloat(value),
     }));
   };
 
   const handleAddChef = () => {
     setSelectedChef(null);
     setFormData({
-      name: '',
-      image: 'https://i.pravatar.cc/300?img=' + Math.floor(Math.random() * 10),
-      speciality: '',
-      skills: '',
-      description: '',
+      name: "",
+      image: "https://i.pravatar.cc/300?img=" + Math.floor(Math.random() * 10),
+      speciality: "",
+      skills: "",
+      description: "",
       available: true,
       hourlyRate: 100,
     });
@@ -102,7 +134,7 @@ const Dashboard = () => {
       name: chef.name,
       image: chef.image,
       speciality: chef.speciality,
-      skills: chef.skills.join(', '),
+      skills: chef.skills.join(", "),
       description: chef.description,
       available: chef.available,
       hourlyRate: chef.hourlyRate,
@@ -119,7 +151,7 @@ const Dashboard = () => {
     if (selectedChef) {
       deleteChef(selectedChef.id);
       setChefs(getChefs());
-      toast.success('Chef deleted successfully');
+      toast.success("Chef deleted successfully");
       setIsDeleteDialogOpen(false);
     }
   };
@@ -129,7 +161,7 @@ const Dashboard = () => {
       name: formData.name,
       image: formData.image,
       speciality: formData.speciality,
-      skills: formData.skills.split(',').map(skill => skill.trim()),
+      skills: formData.skills.split(",").map((skill) => skill.trim()),
       description: formData.description,
       available: formData.available,
       hourlyRate: formData.hourlyRate,
@@ -138,11 +170,11 @@ const Dashboard = () => {
     if (selectedChef) {
       // Update existing chef
       updateChef(selectedChef.id, newChefData);
-      toast.success('Chef updated successfully');
+      toast.success("Chef updated successfully");
     } else {
       // Create new chef
       createChef(newChefData);
-      toast.success('Chef added successfully');
+      toast.success("Chef added successfully");
     }
 
     // Refresh the chef list
@@ -156,9 +188,9 @@ const Dashboard = () => {
         <div className="mb-8">
           <h1 className="text-3xl font-bold mb-2">Welcome, {user.name}</h1>
           <p className="text-muted-foreground">
-            {user.role === 'admin' 
-              ? 'Manage your chefs and bookings from your admin dashboard.' 
-              : 'Manage your bookings and account from your personal dashboard.'}
+            {user.role === "admin"
+              ? "Manage your chefs and bookings from your admin dashboard."
+              : "Manage your bookings and account from your personal dashboard."}
           </p>
         </div>
 
@@ -168,7 +200,7 @@ const Dashboard = () => {
               <Calendar className="h-4 w-4 mr-2" />
               My Bookings
             </TabsTrigger>
-            {user.role === 'admin' && (
+            {user.role === "admin" && (
               <TabsTrigger value="chefs" className="flex items-center">
                 <ChefHat className="h-4 w-4 mr-2" />
                 Manage Chefs
@@ -179,50 +211,71 @@ const Dashboard = () => {
               My Account
             </TabsTrigger>
           </TabsList>
-          
+
           <TabsContent value="bookings">
             <div className="grid grid-cols-1 gap-6">
               <div className="flex items-center justify-between mb-4">
                 <h2 className="text-2xl font-bold">My Bookings</h2>
               </div>
-              
+
               {bookings.length > 0 ? (
                 bookings.map((booking) => (
                   <Card key={booking.id} className="overflow-hidden">
                     <div className="grid grid-cols-1 md:grid-cols-4 md:divide-x">
                       <div className="md:col-span-1 p-6 flex items-center">
                         <div className="w-16 h-16 rounded-full overflow-hidden mr-4">
-                          <img 
-                            src={booking.chef?.image || 'https://i.pravatar.cc/300'} 
-                            alt={booking.chef?.name || 'Chef'} 
+                          <img
+                            src={
+                              booking.chef?.image || "https://i.pravatar.cc/300"
+                            }
+                            alt={booking.chef?.name || "Chef"}
                             className="w-full h-full object-cover"
                           />
                         </div>
                         <div>
-                          <h3 className="font-medium">{booking.chef?.name || 'Unknown Chef'}</h3>
-                          <p className="text-sm text-muted-foreground">{booking.chef?.speciality || 'Chef'}</p>
+                          <h3 className="font-medium">
+                            {booking.chef?.name || "Unknown Chef"}
+                          </h3>
+                          <p className="text-sm text-muted-foreground">
+                            {booking.chef?.speciality || "Chef"}
+                          </p>
                         </div>
                       </div>
-                      
+
                       <div className="md:col-span-1 p-6">
-                        <p className="text-sm text-muted-foreground mb-1">Date</p>
+                        <p className="text-sm text-muted-foreground mb-1">
+                          Date
+                        </p>
                         <p className="font-medium">{booking.date}</p>
                       </div>
-                      
+
                       <div className="md:col-span-1 p-6">
-                        <p className="text-sm text-muted-foreground mb-1">Time</p>
-                        <p className="font-medium">{booking.startTime} - {booking.endTime}</p>
+                        <p className="text-sm text-muted-foreground mb-1">
+                          Time
+                        </p>
+                        <p className="font-medium">
+                          {booking.startTime} - {booking.endTime}
+                        </p>
                       </div>
-                      
+
                       <div className="md:col-span-1 p-6">
-                        <p className="text-sm text-muted-foreground mb-1">Status</p>
-                        <div className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium
-                          ${booking.status === 'confirmed' ? 'bg-green-100 text-green-800' : 
-                            booking.status === 'completed' ? 'bg-blue-100 text-blue-800' : 
-                            booking.status === 'cancelled' ? 'bg-red-100 text-red-800' : 
-                            'bg-yellow-100 text-yellow-800'}`
-                        }>
-                          {booking.status.charAt(0).toUpperCase() + booking.status.slice(1)}
+                        <p className="text-sm text-muted-foreground mb-1">
+                          Status
+                        </p>
+                        <div
+                          className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium
+                          ${
+                            booking.status === "confirmed"
+                              ? "bg-green-100 text-green-800"
+                              : booking.status === "completed"
+                              ? "bg-blue-100 text-blue-800"
+                              : booking.status === "cancelled"
+                              ? "bg-red-100 text-red-800"
+                              : "bg-yellow-100 text-yellow-800"
+                          }`}
+                        >
+                          {booking.status.charAt(0).toUpperCase() +
+                            booking.status.slice(1)}
                         </div>
                       </div>
                     </div>
@@ -233,7 +286,8 @@ const Dashboard = () => {
                   <Calendar className="h-12 w-12 mx-auto text-muted-foreground mb-4" />
                   <h3 className="text-xl font-medium mb-2">No bookings yet</h3>
                   <p className="text-muted-foreground mb-6">
-                    You haven't made any bookings yet. Start by exploring our chefs.
+                    You haven't made any bookings yet. Start by exploring our
+                    chefs.
                   </p>
                   <Link to="/chefs">
                     <Button>Browse Chefs</Button>
@@ -242,8 +296,8 @@ const Dashboard = () => {
               )}
             </div>
           </TabsContent>
-          
-          {user.role === 'admin' && (
+
+          {user.role === "admin" && (
             <TabsContent value="chefs">
               <div className="space-y-6">
                 <div className="flex items-center justify-between mb-4">
@@ -253,31 +307,46 @@ const Dashboard = () => {
                     Add New Chef
                   </Button>
                 </div>
-                
+
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                   {chefs.map((chef) => (
                     <Card key={chef.id} className="overflow-hidden">
                       <div className="aspect-video relative overflow-hidden">
-                        <img 
-                          src={chef.image} 
-                          alt={chef.name} 
+                        <img
+                          src={chef.image}
+                          alt={chef.name}
                           className="w-full h-full object-cover"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex flex-col justify-end p-4">
-                          <h3 className="text-white font-bold text-lg">{chef.name}</h3>
-                          <p className="text-white/80 text-sm">{chef.speciality}</p>
+                          <h3 className="text-blue font-bold text-lg">
+                            {chef.name}
+                          </h3>
+                          <p className="text-blue/80 text-sm">
+                            {chef.speciality}
+                          </p>
                         </div>
                       </div>
                       <CardContent className="p-4">
                         <div className="flex justify-between items-center mb-2">
-                          <div className={`px-2.5 py-0.5 rounded-full text-xs font-medium ${chef.available ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'}`}>
-                            {chef.available ? 'Available' : 'Unavailable'}
+                          <div
+                            className={`px-2.5 py-0.5 rounded-full text-xs font-medium ${
+                              chef.available
+                                ? "bg-green-100 text-green-800"
+                                : "bg-red-100 text-red-800"
+                            }`}
+                          >
+                            {chef.available ? "Available" : "Unavailable"}
                           </div>
-                          <div className="text-sm font-medium">${chef.hourlyRate}/hr</div>
+                          <div className="text-sm font-medium">
+                            ${chef.hourlyRate}/hr
+                          </div>
                         </div>
                         <div className="flex flex-wrap gap-1 mb-4">
                           {chef.skills.map((skill) => (
-                            <span key={skill} className="bg-secondary text-foreground px-2 py-0.5 rounded-full text-xs">
+                            <span
+                              key={skill}
+                              className="bg-secondary text-foreground px-2 py-0.5 rounded-full text-xs"
+                            >
                               {skill}
                             </span>
                           ))}
@@ -286,11 +355,19 @@ const Dashboard = () => {
                           {chef.description}
                         </p>
                         <div className="flex justify-end space-x-2">
-                          <Button variant="outline" size="sm" onClick={() => handleEditChef(chef)}>
+                          <Button
+                            variant="outline"
+                            size="sm"
+                            onClick={() => handleEditChef(chef)}
+                          >
                             <PenTool className="h-4 w-4 mr-2" />
                             Edit
                           </Button>
-                          <Button variant="destructive" size="sm" onClick={() => handleDeleteClick(chef)}>
+                          <Button
+                            variant="destructive"
+                            size="sm"
+                            onClick={() => handleDeleteClick(chef)}
+                          >
                             <Trash className="h-4 w-4 mr-2" />
                             Delete
                           </Button>
@@ -302,13 +379,15 @@ const Dashboard = () => {
               </div>
             </TabsContent>
           )}
-          
+
           <TabsContent value="account">
             <div className="max-w-3xl mx-auto">
               <Card>
                 <CardHeader>
                   <CardTitle>My Account</CardTitle>
-                  <CardDescription>View and manage your account details.</CardDescription>
+                  <CardDescription>
+                    View and manage your account details.
+                  </CardDescription>
                 </CardHeader>
                 <CardContent>
                   <div className="space-y-4">
@@ -324,17 +403,21 @@ const Dashboard = () => {
                     </div>
                     <div>
                       <Label>Role</Label>
-                      <div className="font-medium mt-1 capitalize">{user.role}</div>
+                      <div className="font-medium mt-1 capitalize">
+                        {user.role}
+                      </div>
                     </div>
                     <div>
                       <Label>Account Status</Label>
-                      <div className="font-medium mt-1 text-green-600">Active</div>
+                      <div className="font-medium mt-1 text-green-600">
+                        Active
+                      </div>
                     </div>
                   </div>
                 </CardContent>
                 <CardFooter className="flex justify-between">
                   <p className="text-sm text-muted-foreground">
-                    Account created on {format(new Date(), 'MMMM dd, yyyy')}
+                    Account created on {format(new Date(), "MMMM dd, yyyy")}
                   </p>
                   <Button variant="outline">
                     <Settings className="h-4 w-4 mr-2" />
@@ -351,11 +434,13 @@ const Dashboard = () => {
       <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
         <DialogContent className="sm:max-w-[550px]">
           <DialogHeader>
-            <DialogTitle>{selectedChef ? 'Edit Chef' : 'Add New Chef'}</DialogTitle>
+            <DialogTitle>
+              {selectedChef ? "Edit Chef" : "Add New Chef"}
+            </DialogTitle>
             <DialogDescription>
-              {selectedChef 
-                ? 'Update the chef\'s information and click save when you\'re done.'
-                : 'Fill in the chef\'s information and click save to add them to the system.'}
+              {selectedChef
+                ? "Update the chef's information and click save when you're done."
+                : "Fill in the chef's information and click save to add them to the system."}
             </DialogDescription>
           </DialogHeader>
           <div className="grid gap-4 py-4">
@@ -468,11 +553,15 @@ const Dashboard = () => {
           <DialogHeader>
             <DialogTitle>Confirm Deletion</DialogTitle>
             <DialogDescription>
-              Are you sure you want to delete {selectedChef?.name}? This action cannot be undone.
+              Are you sure you want to delete {selectedChef?.name}? This action
+              cannot be undone.
             </DialogDescription>
           </DialogHeader>
           <DialogFooter>
-            <Button variant="outline" onClick={() => setIsDeleteDialogOpen(false)}>
+            <Button
+              variant="outline"
+              onClick={() => setIsDeleteDialogOpen(false)}
+            >
               Cancel
             </Button>
             <Button variant="destructive" onClick={handleDeleteConfirm}>

@@ -1,18 +1,18 @@
-import { Link } from 'react-router-dom';
-import { ChefHat, Calendar, DollarSign, Clock, Star } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { Card, CardContent } from '@/components/ui/card';
-import { Layout } from '@/components/Layout';
-import { getChefs } from '@/lib/mockData';
-import { Chef } from '@/types';
+import { Link } from "react-router-dom";
+import { ChefHat, Calendar, DollarSign, Clock, Star } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { Layout } from "@/components/Layout";
+import { getChefs } from "@/lib/mockData";
+import { Chef } from "@/types";
 
 const Home = () => {
   const featuredChefs: Chef[] = getChefs().slice(0, 3);
 
   const scrollToChefs = () => {
-    const chefsSection = document.getElementById('featured-chefs');
+    const chefsSection = document.getElementById("featured-chefs");
     if (chefsSection) {
-      chefsSection.scrollIntoView({ behavior: 'smooth' });
+      chefsSection.scrollIntoView({ behavior: "smooth" });
     }
   };
 
@@ -26,7 +26,8 @@ const Home = () => {
               Hire Professional Chefs for Your Private Events
             </h1>
             <p className="text-xl text-muted-foreground mb-10 max-w-3xl animate-fadeIn fade-in-delay-1">
-              Experience exceptional cuisine in the comfort of your home with our carefully selected professional chefs.
+              Experience exceptional cuisine in the comfort of your home with
+              our carefully selected professional chefs.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 animate-fadeIn fade-in-delay-2">
               <Button size="lg" className="px-8" onClick={scrollToChefs}>
@@ -54,38 +55,47 @@ const Home = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <Card className="bg-white border-none shadow-md text-center p-6 animate-slideUp">
+            <Card className="bg-blue border-none shadow-md text-center p-6 animate-slideUp">
               <CardContent className="pt-6">
                 <div className="rounded-full bg-primary/10 p-4 w-16 h-16 flex items-center justify-center mx-auto mb-6">
                   <ChefHat className="h-8 w-8 text-primary" />
                 </div>
                 <h3 className="text-xl font-bold mb-3">Select a Chef</h3>
                 <p className="text-muted-foreground">
-                  Browse through our selection of professional chefs and find the perfect match for your culinary needs.
+                  Browse through our selection of professional chefs and find
+                  the perfect match for your culinary needs.
                 </p>
               </CardContent>
             </Card>
 
-            <Card className="bg-white border-none shadow-md text-center p-6 animate-slideUp" style={{ animationDelay: '0.1s' }}>
+            <Card
+              className="bg-blue border-none shadow-md text-center p-6 animate-slideUp"
+              style={{ animationDelay: "0.1s" }}
+            >
               <CardContent className="pt-6">
                 <div className="rounded-full bg-primary/10 p-4 w-16 h-16 flex items-center justify-center mx-auto mb-6">
                   <Calendar className="h-8 w-8 text-primary" />
                 </div>
                 <h3 className="text-xl font-bold mb-3">Book a Date</h3>
                 <p className="text-muted-foreground">
-                  Choose a convenient date and time for your chef to come and prepare a delicious meal for you.
+                  Choose a convenient date and time for your chef to come and
+                  prepare a delicious meal for you.
                 </p>
               </CardContent>
             </Card>
 
-            <Card className="bg-white border-none shadow-md text-center p-6 animate-slideUp" style={{ animationDelay: '0.2s' }}>
+            <Card
+              className="bg-blue border-none shadow-md text-center p-6 animate-slideUp"
+              style={{ animationDelay: "0.2s" }}
+            >
               <CardContent className="pt-6">
                 <div className="rounded-full bg-primary/10 p-4 w-16 h-16 flex items-center justify-center mx-auto mb-6">
                   <DollarSign className="h-8 w-8 text-primary" />
                 </div>
                 <h3 className="text-xl font-bold mb-3">Make Payment</h3>
                 <p className="text-muted-foreground">
-                  Secure your booking with a simple payment process and get ready to enjoy a professional culinary experience.
+                  Secure your booking with a simple payment process and get
+                  ready to enjoy a professional culinary experience.
                 </p>
               </CardContent>
             </Card>
@@ -99,17 +109,22 @@ const Home = () => {
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold mb-4">Our Featured Chefs</h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Meet some of our highly skilled and experienced professional chefs.
+              Meet some of our highly skilled and experienced professional
+              chefs.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {featuredChefs.map((chef, index) => (
-              <Card key={chef.id} className="overflow-hidden transition-all duration-300 hover:shadow-lg animate-slideUp" style={{ animationDelay: `${index * 0.1}s` }}>
+              <Card
+                key={chef.id}
+                className="overflow-hidden transition-all duration-300 hover:shadow-lg animate-slideUp"
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
                 <div className="aspect-video overflow-hidden">
-                  <img 
-                    src={chef.image} 
-                    alt={chef.name} 
+                  <img
+                    src={chef.image}
+                    alt={chef.name}
                     className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
                   />
                 </div>
@@ -123,17 +138,22 @@ const Home = () => {
                       ${chef.hourlyRate}/hr
                     </div>
                   </div>
-                  
+
                   <div className="flex flex-wrap gap-2 mb-4">
                     {chef.skills.map((skill) => (
-                      <span key={skill} className="bg-secondary text-foreground px-3 py-1 rounded-full text-xs">
+                      <span
+                        key={skill}
+                        className="bg-secondary text-foreground px-3 py-1 rounded-full text-xs"
+                      >
                         {skill}
                       </span>
                     ))}
                   </div>
-                  
-                  <p className="text-muted-foreground mb-6 line-clamp-3">{chef.description}</p>
-                  
+
+                  <p className="text-muted-foreground mb-6 line-clamp-3">
+                    {chef.description}
+                  </p>
+
                   <div className="flex justify-end">
                     <Link to={`/chefs/${chef.id}`}>
                       <Button variant="outline">View Profile</Button>
