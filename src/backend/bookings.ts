@@ -31,8 +31,8 @@ export const generateTimeSlots = (date: string, chefId: string): TimeSlot[] => {
   
   // Generate slots from 9 AM to 9 PM in 1-hour increments
   for (let hour = 9; hour < 21; hour++) {
-    const startTime = `${hour}:00`;
-    const endTime = `${hour + 1}:00`;
+    const startTime = `Rs{hour}:00`;
+    const endTime = `Rs{hour + 1}:00`;
     
     // Check if this slot overlaps with any booking
     const isAvailable = !bookedTimes.some(
@@ -43,7 +43,7 @@ export const generateTimeSlots = (date: string, chefId: string): TimeSlot[] => {
     );
     
     slots.push({
-      id: `${date}-${hour}`,
+      id: `${date}- ${hour}`,
       startTime,
       endTime,
       available: isAvailable,

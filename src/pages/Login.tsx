@@ -63,7 +63,7 @@ const Login = () => {
                 <Input
                   id="email"
                   type="email"
-                  placeholder="name@example.com"
+                  // placeholder="name@example.com"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required
@@ -117,23 +117,21 @@ const Login = () => {
 
             {/* Demo credentials */}
             <div className="mt-6 p-4 bg-muted rounded-md">
-              <p className="text-sm text-center font-medium mb-2">
-                Demo Accounts
-              </p>
+              <p className="text-sm text-center font-medium mb-2"></p>
               <div className="grid grid-cols-1 gap-2 text-sm">
                 <div className="flex justify-between">
-                  <span>User:</span>
-                  <span className="font-mono">user@example.com / password</span>
+                  {/* <span>User:</span> */}
+                  {/* <span className="font-mono">user@example.com / password</span> */}
                 </div>
                 <div className="flex justify-between">
-                  <span>Admin:</span>
+                  {/* <span>Admin:</span> */}
                   <span className="font-mono">
-                    admin@example.com / password
+                    {/* admin@example.com / password */}
                   </span>
                 </div>
                 <div className="flex justify-between">
-                  <span>Chef:</span>
-                  <span className="font-mono">chef@example.com / password</span>
+                  {/* <span>Chef:</span> */}
+                  {/* <span className="font-mono">chef@example.com / password</span> */}
                 </div>
               </div>
             </div>
